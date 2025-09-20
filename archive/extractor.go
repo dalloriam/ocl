@@ -40,6 +40,6 @@ func newExtractor(format Format) (extractor, error) {
 	case Format7z:
 		return &sevenZExtractor{}, nil
 	default:
-		return nil, &ErrUnknownFormat{}
+		return nil, &ErrUnknownFormat{Ext: string(format)}
 	}
 }
